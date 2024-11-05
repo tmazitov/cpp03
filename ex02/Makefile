@@ -3,7 +3,7 @@ NAME=ex02
 SRC=main.cpp \
 	ClapTrap.cpp \
 	ScavTrap.cpp \
-	FlagTrap.cpp
+	FragTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

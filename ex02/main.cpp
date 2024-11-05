@@ -1,14 +1,15 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 
 int main( void ) {
-	FlagTrap flagTrap("FF");
+	FragTrap f("FF");
 
-	flagTrap.attack("enemy");
-	flagTrap.takeDamage(10);
-	flagTrap.beRepaired(5);
+	f.attack("enemy");
+	f.takeDamage(10);
+	f.beRepaired(5);
+	f.highFivesGuys();
 
 	return 0;
 }

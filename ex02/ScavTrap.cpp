@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() 
 {
 	name = "Default";
 	hitPoints = 100;
@@ -9,13 +9,27 @@ ScavTrap::ScavTrap()
 	std::cout << YELLOW << "SC: " << RESET << name << " has been created by default values" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->name = name;
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
 	std::cout << YELLOW << "SC: " << RESET << name << " has been created by name" << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap& other) : ClapTrap(other)
+{	
+	std::cout << YELLOW << "SC: " << RESET << name << " has been created copy constructor" << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(ScavTrap& other)
+{
+	if (this != &other)
+		ClapTrap::operator=(other);
+
+	std::cout << YELLOW << "SC: " << RESET << name << "copy assignment operator overload has been called" << std::endl;
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()
