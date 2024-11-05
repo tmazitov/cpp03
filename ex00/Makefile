@@ -3,14 +3,19 @@ NAME=ex00
 SRC=main.cpp \
 	ClapTrap.cpp
 
-FLAGS=-Wall -Wextra -Werror -std=c++98
+OBJ = $(SRC:.cpp=.o)
 
-all: $(SRC)
-	c++ $(FLAGS) $(SRC) -o $(NAME)
+CXXFLAGS=-Wall -Wextra -Werror -std=c++98
 
-$(NAME): all
+all: $(NAME)
+
+$(NAME) : $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME) 
 
 re: fclean all
 
-fclean:
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
 	rm -f $(NAME)
